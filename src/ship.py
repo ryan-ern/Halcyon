@@ -23,6 +23,8 @@ class Bullet:
 
     def collision(self, obj):
         return collide(self, obj)
+
+#parent class
 class Ship:
     COOLDOWN=30
     def __init__(self, x, y, health=100, score=0):
