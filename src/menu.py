@@ -83,3 +83,66 @@ def main_menu():
                     click = True
 
         pygame.display.update()
+       
+def menu_play():
+    global SCROLL
+    title_play = pygame.font.SysFont("comicsans", 70)
+    run = True
+    while run:
+        #draw scrolling background
+        for i in range(0, TILES):
+            WINDOW.blit(BACKGROUND, (i * BG_WIDTH + SCROLL, 0))
+            BG_RECT.x = i * BG_WIDTH + SCROLL
+            pygame.draw.rect(WINDOW, (255, 255, 255), BG_RECT, -1)
+        #scroll background
+        SCROLL -= 2
+        #reset scroll
+        if abs(SCROLL) > BG_WIDTH:
+            SCROLL = 0
+        #stop die_sound in file game
+        DIE_SOUND.stop()
+        #before play the game
+        title_label1 = title_play.render("Press The Mouse To Begin!", 1, (0,0,0))
+        title_label2 = title_play.render("Or ESC To Back Menu!", 1, (255,0,0))
+        WINDOW.blit(title_label1, (WIDTH/2 - title_label1.get_width()/2, HEIGHT/2 - title_label1.get_height()))
+        WINDOW.blit(title_label2, (WIDTH/2 - title_label2.get_width()/2, HEIGHT/2 - title_label2.get_height()/3))
+        
+        #quit, play the game, back to menu
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                ingame()  
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    main_menu()  
+        pygame.display.update()           
+
+
+def menu_how():
+    global SCROLL
+    run = True
+    while run:
+        #draw scrolling background
+        for i in range(0, TILES):
+            WINDOW.blit(BACKGROUND, (i * BG_WIDTH + SCROLL, 0))
+            BG_RECT.x = i * BG_WIDTH + SCROLL
+            pygame.draw.rect(WINDOW, (255, 255, 255), BG_RECT, -1)
+        #scroll background
+        SCROLL -= 4
+        #reset scroll
+        if abs(SCROLL) > BG_WIDTH:
+            SCROLL = 0
+        #print the picture howtoplay
+        WINDOW.blit(HOWTOPLAY,(0, 0))
+        pygame.display.update()
+        #quit and back to the menu
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                sys.exit()
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    MENU_SOUND.stop()
+                    main_menu()
