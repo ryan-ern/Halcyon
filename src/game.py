@@ -132,8 +132,6 @@ def ingame():
             player.y += player_vel
         if key[pygame.K_UP] or key[pygame.K_SPACE]:
             player.shoot()
-        if key[pygame.K_ESCAPE]:
-            sys.exit()
         
         #cheat input
         cheat = pygame.key.get_pressed()
