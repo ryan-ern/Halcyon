@@ -1,4 +1,4 @@
-# HALCYON ![Image From Player]<img src="assets/player.png" align="right" />
+# HALCYON<img src="assets/player.png" align="right" />
 
 =======
 # HALCYON
