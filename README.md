@@ -1,4 +1,4 @@
-# HALCYON ![Image From Player](assets/player.png"This Is Your Ship")
+# HALCYON ![Image From Player]<img src="assets/player.png" align="right" />
 
 =======
 # HALCYON
