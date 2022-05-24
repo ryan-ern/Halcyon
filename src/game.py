@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 import pygame, random, sys
 from pygame.locals import *
 from src.utility import *
@@ -122,7 +121,7 @@ def ingame():
         #key input
         key = pygame.key.get_pressed()
         keys=100
-        if key[pygame.K_a] and player.x - player_vel > NULL: #kiri
+        if key[pygame.K_a] and player.x - player_vel > 0: #kiri
             player.x -= player_vel
         if key[pygame.K_d] and player.x + player_vel + keys < WIDTH:#kanan
             player.x += player_vel
