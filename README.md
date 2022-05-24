@@ -22,9 +22,9 @@ Berikut kontrol dalam game:
 ## UML
 
 ## Development Contributor
-- Abi Luthfi Ramdan Fadhillah - 120140151 ( Project Leader and Programmer )
-- Dean Andhika Ramadhan       - 120140155 ( Programmer and Sound Effect )
-- Ryan Ernanda                - 120140154 ( Programmer and Sound Effect )
-- Martatia Amanda             - 120140163 ( Programmer and Design )
-- Monica Adella Aisyah Renaldi- 120140144 ( Programmer and Design )
-- M. Rafi Dzaki Akbar         - 120140094 ( Programmer and Design )
+- Abi Luthfi Ramdan Fadhillah - 120140151 ( **Project Leader and Programmer** )
+- Dean Andhika Ramadhan       - 120140155 ( **Programmer and Sound Effect** )
+- Ryan Ernanda                - 120140154 ( **Programmer and Sound Effect** )
+- Martatia Amanda             - 120140163 ( **Programmer and Design** )
+- Monica Adella Aisyah Renaldi- 120140144 ( **Programmer and Design** )
+- M. Rafi Dzaki Akbar         - 120140094 ( **Programmer and Design** )
