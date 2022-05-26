@@ -21,6 +21,7 @@ Berikut kontrol dalam game:
 - Press `SPACE` or `UP` to fire
 
 ## UML
+Untuk melihat Unified Modeling Language (UML) class diagram dari program kami **[Klik Disini](https://github.com/ryan-ern/Halcyon/blob/main/assets/UML.png)** 
 
 ## Development Contributor
 - Abi Luthfi Ramdan Fadhillah - 120140151 ( **Project Leader and Programmer** )
