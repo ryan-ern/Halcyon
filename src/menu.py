@@ -14,6 +14,11 @@ def main_menu():
     except:
         highscore = 0
 
+    try:
+        highlevel = int(Player.get_high_level())
+    except:
+        highlevel = 0
+
     while run:
         #draw scrolling background
         for i in range(0, TILES):
@@ -29,9 +34,9 @@ def main_menu():
         mx, my = pygame.mouse.get_pos()
         title_font = pygame.font.SysFont("comicsans", 35)
         #rectangle
-        button_1 = pygame.Rect(350, 300, 200, 50)
-        button_2 = pygame.Rect(350, 360, 200, 50)
-        button_3 = pygame.Rect(350, 420, 200, 50)
+        button_1 = pygame.Rect(340, 300, 220, 50)
+        button_2 = pygame.Rect(340, 360, 220, 50)
+        button_3 = pygame.Rect(340, 420, 220, 50)
         #draw
         pygame.draw.rect(WINDOW, (255, 0, 0), button_1)
         pygame.draw.rect(WINDOW, (255, 0, 0), button_2)
@@ -57,11 +62,14 @@ def main_menu():
                 highscore = 0
                 with open("src/highscore.txt", "w") as f:
                     f.write(str(highscore))
+                highlevel = 0
+                with open("src/highlevel.txt", "w") as f:
+                    f.write(str(highlevel))
         #render font
-        title_game = title_font.render("HALCYON", 1, (255,0,0))
+        title_game = title_font.render("HALCYON HIGHER", 1, (255,0,0))
         WINDOW.blit(title_game, (WIDTH/2 - title_game.get_width()/2, HEIGHT/2 - title_game.get_height()*2))
 
-        title_highscore = title_font.render(f"HIGHSCORE : {highscore}", 1, (255,0,0))
+        title_highscore = title_font.render(f"Score : {highscore} | Level : {highlevel}", 1, (255,0,0))
         WINDOW.blit(title_highscore, (WIDTH/2 - title_highscore.get_width()/2, HEIGHT/3.2 + title_highscore.get_height()))
 
         title_button1 = title_font.render("Lets Begin!", 1, (255,255,255))
@@ -70,8 +78,8 @@ def main_menu():
         title_button2 = title_font.render("How To Play", 1, (255,255,255))
         WINDOW.blit(title_button2, (WIDTH/2 - title_button2.get_width()/2, HEIGHT/2 + title_button2.get_height()*1.2))
 
-        title_button3 = title_font.render("Reset Score", 1, (255,255,255))
-        WINDOW.blit(title_button3, (WIDTH/2 - title_button3.get_width()/2, HEIGHT/2 + title_button3.get_height()*2.5))
+        title_button3 = title_font.render("Reset Higher", 1, (255,255,255))
+        WINDOW.blit(title_button3, (WIDTH/2 - title_button3.get_width()/2, HEIGHT/2 + title_button3.get_height()*2.4))
         #quit window and condition if button click 
         click = False
         for event in pygame.event.get():

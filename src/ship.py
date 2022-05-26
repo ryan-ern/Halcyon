@@ -111,6 +111,10 @@ class Player(Ship):
     def get_high_score():
         with open("src/highscore.txt", "r") as f:
             return f.read()
+    
+    def get_high_level():
+        with open("src/highlevel.txt", "r") as f:
+            return f.read()
             
 #inheritance class
 class Enemy(Ship):

@@ -1,3 +1,4 @@
+from ast import And
 import pygame, random, sys
 from pygame.locals import *
 from src.utility import *
@@ -32,6 +33,11 @@ def ingame():
         highscore = int(player.get_high_score())
     except:
         highscore = 0
+
+    try:
+        highlevel = int(player.get_high_level())
+    except:
+        highlevel = 0
 
     clock = pygame.time.Clock()
 
@@ -72,6 +78,11 @@ def ingame():
             highscore = player.score
         with open("src/highscore.txt", "w") as f:
             f.write(str(highscore))
+        #highlevel
+        if highlevel < level:
+            highlevel = level
+        with open("src/highlevel.txt", "w") as f:
+            f.write(str(highlevel))
 
         #lost
         if player.health <= 0:
