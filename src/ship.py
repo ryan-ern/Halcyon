@@ -108,11 +108,12 @@ class Player(Ship):
         super().draw(window)
         self.hp_player_bar(window)
 
-    def get_high_score():
+    #encapsulation 
+    def _get_high_score(): #protected
         with open("src/highscore.txt", "r") as f:
             return f.read()
     
-    def get_high_level():
+    def _get_high_level(): #protected
         with open("src/highlevel.txt", "r") as f:
             return f.read()
             

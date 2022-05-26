@@ -10,12 +10,12 @@ def main_menu():
     click = False
     #conditional highscore
     try:
-        highscore = int(Player.get_high_score())
+        highscore = int(Player._get_high_score())
     except:
         highscore = 0
 
     try:
-        highlevel = int(Player.get_high_level())
+        highlevel = int(Player._get_high_level())
     except:
         highlevel = 0
 

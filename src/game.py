@@ -30,12 +30,12 @@ def ingame():
 
     #conditional highscore
     try:
-        highscore = int(player.get_high_score())
+        highscore = int(player._get_high_score())
     except:
         highscore = 0
 
     try:
-        highlevel = int(player.get_high_level())
+        highlevel = int(player._get_high_level())
     except:
         highlevel = 0
 
