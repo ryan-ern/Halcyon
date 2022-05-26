@@ -3,7 +3,8 @@ Pada tugas besar Pemrograman Berorientasi Objek kami membuat sebuah game bernama
 
 Kami membuat game Halcyon ini karena terinspirasi dari video game Platypus yang menggunakan pesawat perang (player) untuk mengalahkan musuh-musuh di setiap levelnya. selain itu musuh juga memiliki kemampuan untuk menembak dan muncul secara _random_ dari kanan _window_ ke arah player (kiri). 
 
-## Depedensi Paket (Library)
+## Depedencies (Library)
+Adapun library yang kami gunakan dalam membuat game Halcyon, yaitu:
 - **[Pygame](https://www.pygame.org)** merupakan library Python untuk membuat atau mengembangkan game.
 - **[Random](https://docs.python.org/3/library/random.html)** merupakan library Python untuk pengacakan dalam menentukan suatu pilihan.
 - **[Sys](https://docs.python.org/3/library/sys.html)** merupakan library Python untuk memanipulasi runtime Python.
