@@ -11,7 +11,7 @@ Adapun library yang kami gunakan dalam membuat game Halcyon, yaitu:
 
 ## How to play
 Sebelum memulai game, kita perlu [install bahasa Python](https://dqlab.id/cara-download-dan-install-python-pada-berbagai-sistem-operasi) dan [install library Pygame](https://www.nesabamedia.com/cara-instal-pygame-di-windows/) terlebih dahulu.
-
+jika sudah langsung saja Run file `main.py`
 Berikut kontrol dalam game:
 - Click the mouse for option `Button`
 - Press `A` to move left
