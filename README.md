@@ -10,7 +10,7 @@ Adapun library yang kami gunakan dalam membuat game Halcyon, yaitu:
 - **[Sys](https://docs.python.org/3/library/sys.html)** merupakan library Python untuk memanipulasi runtime Python.
 
 ## How to play
-- Sebelum memulai game, kita perlu [install bahasa Python](https://dqlab.id/cara-download-dan-install-python-pada-berbagai-sistem-operasi) dan [install library Pygame](https://www.nesabamedia.com/cara-instal-pygame-di-windows/).Anda bisa menjalankannya dengan [`Docker`](https://github.com/ryan-ern/Docker-Halcyon/).
+- Sebelum memulai game, kita perlu [install bahasa Python](https://dqlab.id/cara-download-dan-install-python-pada-berbagai-sistem-operasi) dan [install library Pygame](https://www.nesabamedia.com/cara-instal-pygame-di-windows/). Jika tidak anda bisa menjalankannya dengan [Docker](https://github.com/ryan-ern/Docker-Halcyon/).
 - Jika sudah langsung saja Run file `main.py`
 - Berikut kontrol dalam game:
   - Click the mouse for option `Button`
