@@ -1,4 +1,3 @@
-from ast import And
 import pygame, random, sys
 from pygame.locals import *
 from src.utility import *
