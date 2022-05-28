@@ -10,23 +10,25 @@ Adapun library yang kami gunakan dalam membuat game Halcyon, yaitu:
 - **[Sys](https://docs.python.org/3/library/sys.html)** merupakan library Python untuk memanipulasi runtime Python.
 
 ## How to play
-Sebelum memulai game, kita perlu [install bahasa Python](https://dqlab.id/cara-download-dan-install-python-pada-berbagai-sistem-operasi) dan [install library Pygame](https://www.nesabamedia.com/cara-instal-pygame-di-windows/) terlebih dahulu.
-jika sudah langsung saja Run file `main.py`
-Berikut kontrol dalam game:
-- Click the mouse for option `Button`
-- Press `A` to move left
-- Press `S` to move down
-- Press `W` to move up
-- Press `D` to move right
-- Press `SPACE` or `UP` to fire
+- Sebelum memulai game, kita perlu [install bahasa Python](https://dqlab.id/cara-download-dan-install-python-pada-berbagai-sistem-operasi) dan [install library Pygame](https://www.nesabamedia.com/cara-instal-pygame-di-windows/).Anda bisa menjalankannya dengan [`Docker`](https://github.com/ryan-ern/Docker-Halcyon/).
+- Jika sudah langsung saja Run file `main.py`
+- Berikut kontrol dalam game:
+  - Click the mouse for option `Button`
+  - Press `A` to move left
+  - Press `S` to move down
+  - Press `W` to move up
+  - Press `D` to move right
+  - Press `SPACE` or `UP` to fire
 
 ## UML
 Untuk melihat Unified Modeling Language (UML) class diagram dari program kami **[Klik Disini](https://github.com/ryan-ern/Halcyon/blob/main/assets/UML.png)** 
 
 ## Development Contributor
-- Abi Luthfi Ramdan Fadhillah - 120140151 ( **Project Leader and Programmer** )
-- Dean Andhika Ramadhan       - 120140155 ( **Programmer and Sound Effect** )
-- Ryan Ernanda                - 120140154 ( **Programmer and Sound Effect** )
-- Martatia Amanda             - 120140163 ( **Programmer and Design** )
-- Monica Adella Aisyah Renaldi- 120140144 ( **Programmer and Design** )
-- M. Rafi Dzaki Akbar         - 120140094 ( **Programmer and Design** )
+| Nama | NIM | Contributor |
+| :---: | :---: | :---: |
+| Abi Luthfi Ramdan Fadhillah | 120140151 | Project Leader and Programmer |
+| Dean Andhika Ramadhan | 120140155 | Programmer and Sound Effect |
+| Ryan Ernanda | 120140154 | Programmer and Sound Effect |
+| Martatia Amanda | 120140163 | Programmer and Design |
+| Monica Adella Aisyah Renaldi | 120140144 | Programmer and Design |
+| M. Rafi Dzaki Akbar | 120140094 | Programmer and Design |
