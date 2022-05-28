@@ -1,6 +1,5 @@
 from src.utility import *
 from src.explosion import *
-from abc import ABC
 
 def collide(obj1, obj2):
     offset_x = obj2.x - obj1.x
@@ -27,7 +26,7 @@ class Bullet:
         return collide(self, obj)
 
 #parent class
-class Ship(ABC):
+class Ship:
     COOLDOWN=30
     def __init__(self, x, y, health=100, score=0):
         self.x = x
