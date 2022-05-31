@@ -1,11 +1,12 @@
-import pygame, random, sys
-from pygame.locals import *
-from src.utility import *
+import pygame, random #import library
+import sys #import library
+from pygame.locals import * 
+from src.utility import * #import file
 from src.ship import *
 from src.explosion import *
 def ingame(): 
-    BACKSOUND.play(-1)
-    global SCROLL
+    BACKSOUND.play(-1) #backsound diputar tidak ada batas (unlimited)
+    global SCROLL #variabel global untuk mencegah unbound local error
     run = True
     fps = 60
     level = 0
@@ -29,16 +30,16 @@ def ingame():
 
     #conditional highscore
     try:
-        highscore = int(player._get_high_score())
+        highscore = int(player._get_high_score())  # mencoba mendapatkan nilai int pada class
     except:
-        highscore = 0
+        highscore = 0 #jika tidak ada maka nilai variabel diisi 0
 
     try:
         highlevel = int(player._get_high_level())
     except:
         highlevel = 0
 
-    clock = pygame.time.Clock()
+    clock = pygame.time.Clock() #variabel berisi class Clock
 
     def redraw_window():
         #draw text
@@ -50,13 +51,13 @@ def ingame():
         WINDOW.blit(level_label, (WIDTH - level_label.get_width() - 10, 10))
         WINDOW.blit(enemy_label, (WIDTH/2 - level_label.get_width(), 10))
         
-        #ship
+        #draw enemy dengan bentuk perulangan yang disimpan ke dalam list enemies
         for enemy in enemies:
             enemy.draw(WINDOW)
 
-        player.draw(WINDOW)
+        player.draw(WINDOW) # draw player
 
-        explosion_group.draw(WINDOW)
+        explosion_group.draw(WINDOW) #draw explosion
 
         #condition lost
         if lost:
@@ -64,12 +65,12 @@ def ingame():
             DIE_SOUND.play()
             lost_label = lost_font.render("You Lost!!", 1, (255,255,255))
             WINDOW.blit(lost_label, (WIDTH/2 - lost_label.get_width()/2, HEIGHT/2 - lost_label.get_height()/2))
-
+        
+        explosion_group.update()
         pygame.display.update()
         
     while run:
         clock.tick(fps)
-        explosion_group.update()
         redraw_window()
 
         #highscore
@@ -89,20 +90,20 @@ def ingame():
             lost_count += 1
         
         if lost:
-            if lost_count > fps * 6:
+            if lost_count > fps * 6: #kondisi jika lost_count > fps *6 fungsi ingame ini dihentikan dan kembali ke persiapan sebelum game dimulai
                 run = False
             else:
-                continue
+                continue #jika tidak maka berlanjut terus
         
         #enemies
-        if len(enemies) == 0:
+        if len(enemies) == 0: #kondisi jika panjang list enemies = 0
             level +=1
             wave_length = level * 5
             for i in range(wave_length):
                 enemy = Enemy(random.randrange(910, 4000), random.randrange(80, HEIGHT-80), random.choice(["enemy1", "enemy2", "enemy3"]))
-                enemies.append(enemy)
+                enemies.append(enemy) # spawn enemy dengan random x,y dan memilih 3 enemy secara random
         
-        #cooldown player shoot
+        #kondisi cooldown player shoot
         if level >= 5 and level < 10:
             player.COOLDOWN = 25
         if level >= 10 and level < 15:
@@ -112,7 +113,7 @@ def ingame():
         if level >= 20:
             player.COOLDOWN = 5
 
-        #draw scrolling background
+        #draw background bergerak
         for i in range(0, TILES):
             WINDOW.blit(BACKGROUND, (i * BG_WIDTH + SCROLL, 0))
             BG_RECT.x = i * BG_WIDTH + SCROLL
@@ -161,18 +162,18 @@ def ingame():
         
         #enemy
         for enemy in enemies[:]:
-            enemy.move(enemy_vel)
-            enemy.move_bullets(bullet_vel-3, player)
-            if random.randrange(0, 5*fps) == 1:
+            enemy.move(enemy_vel) #kecepatan enemy bergerak
+            enemy.move_bullets(bullet_vel-3, player) #kecepatan gerak bullet enemy dan player sebagai objek tabrakan
+            if random.randrange(0, 5*fps) == 1: #enemy menembak secara random, semakin kecil fps maka semakin banyak
                 enemy.shoot()
-            if collide(enemy, player):
+            if collide(enemy, player): #kondisi enemy menbrak player
                 player.health -= 15
                 enemies.remove(enemy)
                 EXPLOSION_SOUND.play()
                 explosion = Explosion(enemy.x + enemy.get_width()/2, enemy.y + enemy.get_height()/2)
                 explosion_group.add(explosion)
                 player.score+=1
-            if enemy.x + enemy.get_width() < 0:
+            if enemy.x + enemy.get_width() < 0: # kondisi enemy keluar dari layar
                 enemies.remove(enemy)
                 if player.score <=0:
                     player.health-=5
@@ -183,4 +184,4 @@ def ingame():
                     player.health -=2.5
         
         #bullet player
-        player.move_bullets(-bullet_vel, enemies)
+        player.move_bullets(-bullet_vel, enemies) # -bullet vel digunakan agar koordinat x bernilai positif, objeknya list enemies
