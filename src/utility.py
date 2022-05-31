@@ -1,4 +1,4 @@
-import pygame, os
+import pygame
 import math
 
 #font
@@ -15,10 +15,10 @@ DIE_SOUND = pygame.mixer.Sound('assets/sound/BS-die.mp3')
 ESHOOT_SOUND = pygame.mixer.Sound('assets/sound/BS-eshoot.mp3')
 
 #Image ship
-ENEMY1 = pygame.image.load(os.path.join("assets", "enemy1.png"))
-ENEMY2 = pygame.image.load(os.path.join("assets", "enemy2.png"))
-ENEMY3 = pygame.image.load(os.path.join("assets", "enemy3.png"))
-PLAYER = pygame.image.load(os.path.join("assets", "player.png"))
+ENEMY1 = pygame.image.load('assets/enemy1.png')
+ENEMY2 = pygame.image.load('assets/enemy2.png')
+ENEMY3 = pygame.image.load('assets/enemy3.png')
+PLAYER = pygame.image.load('assets/player.png')
 
 #Window
 WIDTH, HEIGHT = 900, 600
@@ -28,17 +28,17 @@ ICON = pygame.transform.scale(PLAYER, (50, 50))
 pygame.display.set_icon(ICON)
 
 #image bullet
-PLAYER_BULLET = pygame.image.load(os.path.join("assets", "pbullet.png"))
-ENEMY_BULLET1 = pygame.image.load(os.path.join("assets", "ebullet1.png"))
-ENEMY_BULLET2 = pygame.image.load(os.path.join("assets", "ebullet2.png"))
-ENEMY_BULLET3 = pygame.image.load(os.path.join("assets", "ebullet3.png"))
+PLAYER_BULLET = pygame.image.load('assets/pbullet.png')
+ENEMY_BULLET1 = pygame.image.load('assets/ebullet1.png')
+ENEMY_BULLET2 = pygame.image.load('assets/ebullet1.png')
+ENEMY_BULLET3 = pygame.image.load('assets/ebullet1.png')
 
 #how to play
-HOWTOPLAY = pygame.image.load(os.path.join("assets", "howtoplay.png"))
+HOWTOPLAY = pygame.image.load('assets/howtoplay.png')
 
 #background
-BACKGROUND = pygame.transform.scale(pygame.image.load(os.path.join("assets", "BG.png")), (WIDTH, HEIGHT))
-BG_WIDTH = BACKGROUND.get_width()
-BG_RECT = BACKGROUND.get_rect()
+BACKGROUND = pygame.transform.scale(pygame.image.load('assets/BG.png'), (WIDTH, HEIGHT)) #scale background menyesuaikan WIDTH dan HEIGHT window
+BG_WIDTH = BACKGROUND.get_width() #mengambil lebar background
+BG_RECT = BACKGROUND.get_rect() #mengambil rectangle background
 SCROLL = 0
-TILES = math.ceil(WIDTH  / BG_WIDTH) + 1
+TILES = math.ceil(WIDTH  / BG_WIDTH) + 1 # perhitungan besar background dan hasil perhitungan dibulatkan ke angka terdekat
