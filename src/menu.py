@@ -43,11 +43,11 @@ def main_menu():
         pygame.draw.rect(WINDOW, (255, 0, 0), button_3)
         #kondisi tabrakan antara kursor mouse dan button
         if button_1.collidepoint((mx, my)):
-            pygame.draw.rect(WINDOW, (0, 0, 0), button_1)
-            if click:
-                MENU_SOUND.stop()
-                BUTTON_SOUND.play()
-                menu_play()
+            pygame.draw.rect(WINDOW, (0, 0, 0), button_1) #kursor menabrak button warna berubah menjadi hitam
+            if click: # kondisi kursor klik button
+                MENU_SOUND.stop() #menu_sound berhenti
+                BUTTON_SOUND.play() #button_sounde dimulai
+                menu_play() #memanggil fungsi menu_play
 
         if button_2.collidepoint((mx, my)):
             pygame.draw.rect(WINDOW, (0, 0, 0), button_2)
