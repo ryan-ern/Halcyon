@@ -1,18 +1,18 @@
-import pygame,sys
-from src.utility import *
+import pygame,sys #import library
+from src.utility import * #import all dari file
 from src.game import *
 from src.ship import *
 
 def main_menu():
-    MENU_SOUND.play(-1)
-    global SCROLL
+    MENU_SOUND.play(-1) # memutar menu sound unlimted (-1)
+    global SCROLL #menghindari unbound local error
     run = True
     click = False
     #conditional highscore
     try:
-        highscore = int(Player._get_high_score())
+        highscore = int(Player._get_high_score()) # mencoba mengambil nilai dari class 
     except:
-        highscore = 0
+        highscore = 0 #jika tidak ada maka diisi dengan nilai 0
 
     try:
         highlevel = int(Player._get_high_level())
@@ -20,7 +20,7 @@ def main_menu():
         highlevel = 0
 
     while run:
-        #draw scrolling background
+        #draw background bergerak
         for i in range(0, TILES):
             WINDOW.blit(BACKGROUND, (i * BG_WIDTH + SCROLL, 0))
             BG_RECT.x = i * BG_WIDTH + SCROLL
@@ -30,7 +30,7 @@ def main_menu():
         #reset scroll
         if abs(SCROLL) > BG_WIDTH:
             SCROLL = 0
-        #Returns the X and Y position mouse cursor
+        #returns X dan Y posisi kursor mouse
         mx, my = pygame.mouse.get_pos()
         title_font = pygame.font.SysFont("comicsans", 35)
         #rectangle
@@ -41,7 +41,7 @@ def main_menu():
         pygame.draw.rect(WINDOW, (255, 0, 0), button_1)
         pygame.draw.rect(WINDOW, (255, 0, 0), button_2)
         pygame.draw.rect(WINDOW, (255, 0, 0), button_3)
-        #collide position mouse to the button
+        #kondisi tabrakan antara kursor mouse dan button
         if button_1.collidepoint((mx, my)):
             pygame.draw.rect(WINDOW, (0, 0, 0), button_1)
             if click:
@@ -80,12 +80,12 @@ def main_menu():
 
         title_button3 = title_font.render("Reset Higher", 1, (255,255,255))
         WINDOW.blit(title_button3, (WIDTH/2 - title_button3.get_width()/2, HEIGHT/2 + title_button3.get_height()*2.4))
-        #quit window and condition if button click 
-        click = False
-        for event in pygame.event.get():
+
+        for event in pygame.event.get():#perulangan interaksi user
             if event.type == QUIT:
                 run = False
                 sys.exit()
+            #kondisi mouse di klik
             if event.type == MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
@@ -97,7 +97,7 @@ def menu_play():
     title_play = pygame.font.SysFont("comicsans", 70)
     run = True
     while run:
-        #draw scrolling background
+        #draw background bergerak
         for i in range(0, TILES):
             WINDOW.blit(BACKGROUND, (i * BG_WIDTH + SCROLL, 0))
             BG_RECT.x = i * BG_WIDTH + SCROLL
@@ -109,15 +109,15 @@ def menu_play():
             SCROLL = 0
         #stop die_sound in file game
         DIE_SOUND.stop()
-        #before play the game
+        #preparation (persiapan) sebelum game dimulai
         title_label1 = title_play.render("Press The Mouse To Begin!", 1, (0,0,0))
         title_label2 = title_play.render("Or ESC To Back Menu!", 1, (255,0,0))
         WINDOW.blit(title_label1, (WIDTH/2 - title_label1.get_width()/2, HEIGHT/2 - title_label1.get_height()))
         WINDOW.blit(title_label2, (WIDTH/2 - title_label2.get_width()/2, HEIGHT/2 - title_label2.get_height()/3))
         
-        #quit, play the game, back to menu
+        #perulangan interaksi user
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT:  #kondisi ketika user melakukan quit, klik, menekan tombol
                 run = False
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
@@ -125,14 +125,14 @@ def menu_play():
             if event.type == KEYDOWN:
                 if event.key == K_ESCAPE:
                     main_menu()  
-        pygame.display.update()           
+        pygame.display.update() #update layar           
 
 
 def menu_how():
     global SCROLL
     run = True
     while run:
-        #draw scrolling background
+        #draw background bergerak
         for i in range(0, TILES):
             WINDOW.blit(BACKGROUND, (i * BG_WIDTH + SCROLL, 0))
             BG_RECT.x = i * BG_WIDTH + SCROLL
@@ -145,9 +145,9 @@ def menu_how():
         #print the picture howtoplay
         WINDOW.blit(HOWTOPLAY,(0, 0))
         pygame.display.update()
-        #quit and back to the menu
+        #perulangan interaksi user
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT:#kondisi ketika user melakukan quit, menekan tombol
                 run = False
                 sys.exit()
             if event.type == KEYDOWN:
