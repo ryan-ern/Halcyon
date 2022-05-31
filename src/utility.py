@@ -30,8 +30,8 @@ pygame.display.set_icon(ICON)
 #image bullet
 PLAYER_BULLET = pygame.image.load('assets/pbullet.png')
 ENEMY_BULLET1 = pygame.image.load('assets/ebullet1.png')
-ENEMY_BULLET2 = pygame.image.load('assets/ebullet1.png')
-ENEMY_BULLET3 = pygame.image.load('assets/ebullet1.png')
+ENEMY_BULLET2 = pygame.image.load('assets/ebullet2.png')
+ENEMY_BULLET3 = pygame.image.load('assets/ebullet3.png')
 
 #how to play
 HOWTOPLAY = pygame.image.load('assets/howtoplay.png')
