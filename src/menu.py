@@ -81,6 +81,7 @@ def main_menu():
         title_button3 = title_font.render("Reset Higher", 1, (255,255,255))
         WINDOW.blit(title_button3, (WIDTH/2 - title_button3.get_width()/2, HEIGHT/2 + title_button3.get_height()*2.4))
 
+        click = False
         for event in pygame.event.get():#perulangan interaksi user
             if event.type == QUIT:
                 run = False
