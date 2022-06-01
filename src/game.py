@@ -157,6 +157,8 @@ def ingame():
             enemies.clear()
         if cheat[pygame.K_s] and cheat[pygame.K_t]: # cooldown shoot
             player.COOLDOWN=5
+        if cheat[pygame.K_s] and cheat[pygame.K_h]: # normal cooldown shoot
+            player.COOLDOWN=30
         if cheat[pygame.K_d] and cheat[pygame.K_i]: # die
             player.health=0
         
